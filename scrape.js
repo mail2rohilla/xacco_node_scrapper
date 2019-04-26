@@ -1,12 +1,23 @@
 var osmosis = require('osmosis');
 
 osmosis
-    .get('www.craigslist.org/about/sites')
-    .find('h1 + div a')
-    .set('location1')
-    .follow('@href')
-    .find('div h4 a span')
-    .set('category')
+
+.get('https://www.coveliving.co/listing/standard-room-mera-springs/')
+    .find('body')
+    .set({
+        propertyName : 'main>div>div>div[3]>a',
+        price : '#jmfe-custom-room_price',
+        rooms : "#jmfe-custom-unit_type",
+        availability : "#jmfe-custom-vailability",
+        sharingStatus : ".content-single-job_listing-title-category a",
+        propertyDescription : ["#jmfe_widget-9 > p"],
+        nearBy : ["#jmfe-wrap-transport div+div"],
+        flatMatesList : ['#author_avatars-6>div div span strong']
+    })
+    // .set('location')
+    // .follow('@href')
+    // .find('header + div + div li > a')
+    // .set('category')
     // .follow('@href')
     // .paginate('.totallink + a.button.next:first')
     // .find('p > a')
@@ -21,8 +32,8 @@ osmosis
     //     'images':       ['img@src']
     // })
     .data(function(listing) {
-    console.log(listing)
+        console.log(listing)
     })
-    .log(console.log)
-    .error(console.log)
-    .debug(console.log);
+    // .log(console.log)
+    // .error(console.log)
+    // .debug(console.log)
