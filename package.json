@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "osmosis": "^1.1.10"
+    "jquery": "^3.4.0",
+    "osmosis": "^1.1.10",
+    "request": "^2.88.0"
   }
 }
