@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "jquery": "^3.4.0",
+    "mongodb": "^3.2.3",
     "osmosis": "^1.1.10",
     "request": "^2.88.0"
   }
