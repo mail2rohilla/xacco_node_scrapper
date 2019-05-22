@@ -1,8 +1,10 @@
 const MongoClient = require('mongodb').MongoClient;
+const stringConstants = require('./StringConstants');
+
 const assert = require('assert');
 
 const url = 'mongodb://localhost:27017';
-const dbName = 'xacco_db';
+const dbName = 'xacco_db1';
 const flat_collection = 'flats';
 
 
@@ -32,6 +34,20 @@ let mongoObj = function () {
     }
 };
 
+let timer = function(timeInMillis){
+    //  status can be 'ON_HOLD', 'COMPLETED', 'INTERRUPTED'
+    //
+    //
+    var status = "START";
+
+};
+
+var replaceSpecialCharacters = function (x){
+    if(x.match(/[a-zA-Z0-9]/)) return x;
+    else return '_';
+}
+
 module.exports = {
-    obj : mongoObj
+    obj : mongoObj,
+    replaceSpecialCharacters : replaceSpecialCharacters
 };
